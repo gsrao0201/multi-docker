@@ -20,7 +20,7 @@ after_success:
   - docker push gsrao0201/multi-nginx
   - docker push gsrao0201/multi-server
   - docker push gsrao0201/multi-worker
-
+edge: true
 deploy:
   provider: elasticbeanstalk
   region: 'us-west-1'
@@ -29,7 +29,7 @@ deploy:
   bucket_name: 'elasticbeanstalk-us-west-1-543177743079'
   bucket_path: 'multi-docker'
   on:
-    branch: main
+    branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
